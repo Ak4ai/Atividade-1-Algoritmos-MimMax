@@ -14,9 +14,7 @@ int main() {
         if (tamanhoVetor == 1000000) {
             tamanhoVetor = 500000;
         }
-        cout << "tamanhoVetor:" << tamanhoVetor << endl;
         cout << "----------------------------------------------------------------------" << tamanhoVetor << endl;
-        outputFile << "tamanhoVetor:" << tamanhoVetor << endl;
         outputFile << "----------------------------------------------------------------------" << tamanhoVetor << endl;
         auto start = high_resolution_clock::now(); // Inicia a contagem de tempo
 
