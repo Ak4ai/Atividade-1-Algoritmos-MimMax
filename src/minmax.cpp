@@ -1,6 +1,5 @@
+// Implementações das funções minmax (minmax.cpp)
 #include "minmax.hpp"
-#include "vetor.hpp"
-#include <cstdlib>
 
 void minmax1(const std::vector<int>& A, int& Max, int& Min) {
     Max = A[0];

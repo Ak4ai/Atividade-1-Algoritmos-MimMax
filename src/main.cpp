@@ -2,62 +2,118 @@
 #include <chrono> // para medir o tempo de execução
 #include "vetor.hpp"
 #include "minmax.hpp"
+#include <fstream> // Para lidar com arquivos de texto
 
 using namespace std;
 using namespace std::chrono;
 
 int main() {
-    int tamanhoVetor;
-    int escolha = 0; // Inicialize escolha para garantir que entre no loop
-    while (escolha != 5) {
-        cout << "Digite o tamanho do vetor: ";
-        cin >> tamanhoVetor;
-
-        do {
-            cout << "1. MinMax1, 2. MinMax2, 3. MinMax3, 4. Default (sem calcular o minmax), 5. Sair: ";
-            cin >> escolha;
-        } while (escolha <= 0 || escolha > 5); // Ajuste na condição do loop
-
-        if (escolha == 5) // Verifique se a escolha é para sair antes de criar o vetor
-            break;
-
-        Vetor vetor;
+    ofstream outputFile("tempos_execucao.txt", ofstream::out | ofstream::trunc);
+    Vetor vetor;
+    for (int tamanhoVetor = 1000; tamanhoVetor <= 1000000; tamanhoVetor *= 10) {
+        if (tamanhoVetor == 1000000) {
+            tamanhoVetor = 500000;
+        }
+        cout << "tamanhoVetor:" << tamanhoVetor << endl;
+        cout << "----------------------------------------------------------------------" << tamanhoVetor << endl;
+        outputFile << "tamanhoVetor:" << tamanhoVetor << endl;
+        outputFile << "----------------------------------------------------------------------" << tamanhoVetor << endl;
         auto start = high_resolution_clock::now(); // Inicia a contagem de tempo
-        for (int i = 0; i < 10; i++) {
-            vetor.preencherAleatorio(tamanhoVetor);
 
-            // Exibindo o vetor preenchido
-            cout << "Vetor preenchido aleatoriamente com " << tamanhoVetor << " elementos:" << endl;
-            for (int num : vetor.getVetor()) {
-                cout << num << " ";
-            }
-            cout << endl;
-
-            int Max, Min;
-
-            switch (escolha) {
-                case 1:
-                    minmax1(vetor.getVetor(), Max, Min);
-                    break;
-                case 2:
-                    minmax2(vetor.getVetor(), Max, Min);
-                    break;
-                case 3:
-                    minmax3(vetor.getVetor(), Max, Min);
-                    break;
-                default:
-                    // Não faz nada, apenas continua sem calcular minmax
-                    break;
-            }
-
-            if (escolha != 4) { // Exibir apenas para os casos que calculam minmax
+        // Executar MinMax1
+        for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 10; i++) {
+                vetor.preencherAleatorio(tamanhoVetor);
+                if (j == 1) {
+                    vetor.ordenarCrescente();
+                    cout << "Crescente" << endl;
+                }
+                else if (j == 2) {
+                    vetor.ordenarDecrescente();
+                    cout << "Decrescente" << endl;
+                }
+                int Max, Min;
+                minmax1(vetor.getVetor(), Max, Min);
+                // Exibindo o resultado
                 cout << "Maximo: " << Max << ", Minimo: " << Min << endl;
             }
-
+            auto stop = high_resolution_clock::now(); // Finaliza a contagem de tempo novamente
+            auto duration = duration_cast<microseconds>(stop - start); // Calcula a duração em nanossegundos
+            cout << "Tempo de execução do MinMax1: " << (duration.count() / 10) << " microseconds" << endl;
+                if (j == 1) {
+                    vetor.ordenarCrescente();
+                    outputFile << "Crescente: " << endl;
+                }
+                else if (j == 2) {
+                    vetor.ordenarDecrescente();
+                    outputFile << "Decrescente: " << endl;
+                }
+            outputFile << "Tempo de execução do MinMax1: " << (duration.count() / 10) << " microseconds" << endl;
         }
-        auto stop = high_resolution_clock::now(); // Finaliza a contagem de tempo
-        auto duration = duration_cast<nanoseconds>(stop - start); // Calcula a duração em microssegundos
-        cout << "Tempo de execução: " << (duration.count() / 10) << " microseconds" << endl;
+
+        start = high_resolution_clock::now(); // Inicia a contagem de tempo novamente
+
+        // Executar MinMax2
+        for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 10; i++) {
+                vetor.preencherAleatorio(tamanhoVetor);
+                if (j == 1) {
+                    vetor.ordenarCrescente();
+                    cout << "Crescente" << endl;
+                }
+                else if (j == 2) {
+                    vetor.ordenarDecrescente();
+                    cout << "Decrescente" << endl;
+                }
+                int Max, Min;
+                minmax2(vetor.getVetor(), Max, Min);
+                // Exibindo o resultado
+                cout << "Maximo: " << Max << ", Minimo: " << Min << endl;
+            }
+            auto stop = high_resolution_clock::now(); // Finaliza a contagem de tempo novamente
+            auto duration = duration_cast<microseconds>(stop - start); // Calcula a duração em nanossegundos
+            cout << "Tempo de execução do MinMax2: " << (duration.count() / 10) << " microseconds" << endl;
+                            if (j == 1) {
+                    vetor.ordenarCrescente();
+                    outputFile << "Crescente: " << endl;
+                }
+                else if (j == 2) {
+                    vetor.ordenarDecrescente();
+                    outputFile << "Decrescente: " << endl;
+                }
+            outputFile << "Tempo de execução do MinMax2: " << (duration.count() / 10) << " microseconds" << endl;
+        }
+
+        // Executar MinMax3
+        for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 10; i++) {
+                vetor.preencherAleatorio(tamanhoVetor); // Preenche o vetor novamente para cada iteração
+                if (j == 1) {
+                    vetor.ordenarCrescente(); // Ordena o vetor em ordem crescente
+                    cout << "Crescente" << endl;
+                }
+                else if (j == 2) {
+                    vetor.ordenarDecrescente(); // Ordena o vetor em ordem decrescente
+                    cout << "Decrescente" << endl;
+                }
+                int Max, Min;
+                minmax3(vetor.getVetor(), Max, Min);
+                // Exibindo o resultado
+                cout << "Maximo: " << Max << ", Minimo: " << Min << endl;
+            }
+            auto stop = high_resolution_clock::now(); // Finaliza a contagem de tempo novamente
+            auto duration = duration_cast<microseconds>(stop - start); // Calcula a duração em nanossegundos
+            cout << "Tempo de execução do MinMax2: " << (duration.count() / 10) << " microseconds" << endl;
+                            if (j == 1) {
+                    vetor.ordenarCrescente();
+                    outputFile << "Crescente: " << endl;
+                }
+                else if (j == 2) {
+                    vetor.ordenarDecrescente();
+                    outputFile << "Decrescente: " << endl;
+                }
+            outputFile << "Tempo de execução do MinMax3: " << (duration.count() / 10) << " microseconds" << endl;
+        }
     }
 
     return 0;
