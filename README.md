@@ -3,6 +3,8 @@
 |--------|---|---|---|----|
 | ![MinMax](minmax.png) | ![1](minmax1.png) | ![2](minmax2.png) | ![3](minmax3.png) | ![12](minmax12.png) |
 
-<div style="text-align:center;">
-    <img src="https://github.com/Ak4ai/Atividade2-LabAEDS/raw/main/assets/129908980/2feef082-b1a7-4c95-9e54-3b33415dc974.png" alt="minmax">
-</div>
+
+![minmax](https://github.com/Ak4ai/Atividade2-LabAEDS/assets/129908980/6b2bcc3f-bc94-4c8b-b4f4-21bfc66c9c0c)
+<p align="center">
+  <img src="https://github.com/Ak4ai/Atividade2-LabAEDS/assets/129908980/6b2bcc3f-bc94-4c8b-b4f4-21bfc66c9c0c">
+</p>
