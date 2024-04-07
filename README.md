@@ -294,16 +294,74 @@ std::vector<int> Vetor::getVetor() const {
 
 
 ## Testes
-Os resultados dos testes realizados são registrados no arquivo `geracoes.txt`, incluindo o tempo de execução de cada implementação do MinMax para vetores de diferentes tamanhos e estados de ordenação.
+Os resultados dos testes realizados são registrados no arquivo `tempos_execucao.txt`, incluindo o tempo de execução de cada implementação do MinMax para vetores de diferentes tamanhos e estados de ordenação.
+
+### Tamanho do Vetor: 1000
+- Tempo de execução do MinMax1: 30 microseconds
+- Tempo de execução do MinMax1 (Ordenado Crescente): 181 microseconds
+- Tempo de execução do MinMax1 (Ordenado Decrescente): 352 microseconds
+- Tempo de execução do MinMax2: 32 microseconds
+- Tempo de execução do MinMax2 (Ordenado Crescente): 211 microseconds
+- Tempo de execução do MinMax2 (Ordenado Decrescente): 412 microseconds
+- Tempo de execução do MinMax3: 456 microseconds
+- Tempo de execução do MinMax3 (Ordenado Crescente): 629 microseconds
+- Tempo de execução do MinMax3 (Ordenado Decrescente): 813 microseconds
+
+### Tamanho do Vetor: 10000
+- Tempo de execução do MinMax1: 315 microseconds
+- Tempo de execução do MinMax1 (Ordenado Crescente): 2109 microseconds
+- Tempo de execução do MinMax1 (Ordenado Decrescente): 4102 microseconds
+- Tempo de execução do MinMax2: 311 microseconds
+- Tempo de execução do MinMax2 (Ordenado Crescente): 2101 microseconds
+- Tempo de execução do MinMax2 (Ordenado Decrescente): 4068 microseconds
+- Tempo de execução do MinMax3: 4497 microseconds
+- Tempo de execução do MinMax3 (Ordenado Crescente): 6370 microseconds
+- Tempo de execução do MinMax3 (Ordenado Decrescente): 8415 microseconds
+
+### Tamanho do Vetor: 100000
+- Tempo de execução do MinMax1: 3144 microseconds
+- Tempo de execução do MinMax1 (Ordenado Crescente): 21521 microseconds
+- Tempo de execução do MinMax1 (Ordenado Decrescente): 42008 microseconds
+- Tempo de execução do MinMax2: 2811 microseconds
+- Tempo de execução do MinMax2 (Ordenado Crescente): 20946 microseconds
+- Tempo de execução do MinMax2 (Ordenado Decrescente): 41270 microseconds
+- Tempo de execução do MinMax3: 45207 microseconds
+- Tempo de execução do MinMax3 (Ordenado Crescente): 63116 microseconds
+- Tempo de execução do MinMax3 (Ordenado Decrescente): 84093 microseconds
+
+### Tamanho do Vetor: 500000
+- Tempo de execução do MinMax1: 14582 microseconds
+- Tempo de execução do MinMax1 (Ordenado Crescente): 111125 microseconds
+- Tempo de execução do MinMax1 (Ordenado Decrescente): 222568 microseconds
+- Tempo de execução do MinMax2: 14082 microseconds
+- Tempo de execução do MinMax2 (Ordenado Crescente): 111017 microseconds
+- Tempo de execução do MinMax2 (Ordenado Decrescente): 221022 microseconds
+- Tempo de execução do MinMax3: 242325 microseconds
+- Tempo de execução do MinMax3 (Ordenado Crescente): 339333 microseconds
+- Tempo de execução do MinMax3 (Ordenado Decrescente): 452386 microseconds
+
 
 ## Conclusão
-A análise de desempenho realizada fornece informações importantes sobre a eficiência das diferentes implementações do algoritmo MinMax. Esses resultados podem ser úteis na seleção da implementação mais adequada para diferentes cenários de uso.
+
+O programa desenvolvido tem como objetivo realizar uma análise de desempenho de três versões diferentes do algoritmo MinMax, aplicado a vetores de diferentes tamanhos. Além disso, o programa também avalia o impacto do estado de ordenação do vetor (crescente, decrescente ou aleatório) no desempenho do algoritmo.
+
+Durante a execução do programa, foram realizados testes com vetores de tamanhos variados, desde 1000 até 500000 elementos. Para cada tamanho de vetor, foram executadas três versões do algoritmo MinMax, e os tempos de execução foram registrados. Além disso, o programa também avaliou o desempenho do algoritmo para vetores ordenados crescente e decrescentemente.
+
+Os resultados obtidos indicam que o desempenho do algoritmo MinMax é influenciado pelo tamanho do vetor e pelo estado de ordenação. Em geral, o algoritmo MinMax 3 apresentou um desempenho mais consistente em relação aos demais, com tempos de execução um pouco mais elevados em comparação com o MinMax 1 e MinMax 2, especialmente para vetores maiores. Isso sugere que a abordagem utilizada no MinMax 3 pode ser mais eficiente em certos cenários, apesar de ser mais complexa.
+
+Além disso, observou-se que o estado de ordenação do vetor teve um impacto significativo no desempenho do algoritmo. Para vetores ordenados, o tempo de execução tendeu a ser menor do que para vetores aleatórios, indicando que a ordenação prévia pode melhorar o desempenho do algoritmo MinMax.
+
+Em resumo, este programa fornece informações valiosas sobre o desempenho do algoritmo MinMax em diferentes cenários e pode ser útil para orientar escolhas de implementação em aplicações que dependem desse algoritmo.
+
 
 ## Contato
-Para mais informações, entre em contato com o autor do projeto:
-- Nome: [Nome do Autor]
-- Email: [Endereço de Email]
+<div>
+<a style="color:black" href="mailto:ricosgames.henrique@gmail.com?subject=[GitHub]%20Source%20Dynamic%20Lists">
+✉️ <i>ricosgames.henrique@gmail.com</i>
+</a>
+</div>
 
 ## Referências
-- [Referência 1]
-- [Referência 2]
+- Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms. MIT Press.
+- Sedgewick, R., & Wayne, K. (2011). Algorithms. Addison-Wesley Professional.
+- DA SILVA, Michel Pires. Material de aula: Análise Assintótica. 8 atrás. 2024. Apresentação de slides. Disponível em: https://ava.cefetmg.br/pluginfile.php/250215/mod_resource/content/8/Aula1.pdf. Acesso em 18 mar. 2024.
