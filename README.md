@@ -7,7 +7,7 @@
 
 | All | 1 | 2 | 3 | 12 |
 |--------|---|---|---|----|
-| ![MinMax](minmax.png) | ![1](minmax1.png) | ![2](minmax2.png) | ![3](minmax3.png) | ![12](minmax12.png) |
+| ![MinMax](datasets/pics/minmax.png) | ![1](datasets/pics/minmax1.png) | ![2](datasets/pics/minmax2.png) | ![3](datasets/pics/minmax3.png) | ![12](datasets/pics/minmax12.png) |
 
 # Programa de Análise de Desempenho do Algoritmo MinMax
 
