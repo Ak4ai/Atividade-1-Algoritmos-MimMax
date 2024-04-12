@@ -1,5 +1,5 @@
 set terminal pngcairo enhanced font "arial,10" size 1280,720
-set output 'minmax.png'
+set output 'pics/minmaxx.png'
 
 # Definindo a cor de fundo do gráfico
 set object 1 rectangle from screen 0,0 to screen 1,1 behind fillcolor rgb "#0d1117" fillstyle solid 1

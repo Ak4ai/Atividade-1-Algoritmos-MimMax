@@ -4,6 +4,7 @@
 
 #include <vector>
 #include <ctime> // inclua ctime para srand e time
+#include "minmax.hpp"
 
 class Vetor {
 public:
@@ -12,6 +13,7 @@ public:
     std::vector<int> getVetor() const; // Changed to const
     void ordenarCrescente();
     void ordenarDecrescente();
+    void run();
 private:
     std::vector<int> vetor;
 };

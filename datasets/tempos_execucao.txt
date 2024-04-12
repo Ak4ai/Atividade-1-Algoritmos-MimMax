@@ -1,0 +1,64 @@
+----------------------------------------------------------------------1000
+Tempo de execução do MinMax1: 29 microseconds
+Crescente: 
+Tempo de execução do MinMax1: 178 microseconds
+Decrescente: 
+Tempo de execução do MinMax1: 348 microseconds
+Tempo de execução do MinMax2: 28 microseconds
+Crescente: 
+Tempo de execução do MinMax2: 182 microseconds
+Decrescente: 
+Tempo de execução do MinMax2: 354 microseconds
+Tempo de execução do MinMax3: 393 microseconds
+Crescente: 
+Tempo de execução do MinMax3: 536 microseconds
+Decrescente: 
+Tempo de execução do MinMax3: 706 microseconds
+----------------------------------------------------------------------10000
+Tempo de execução do MinMax1: 305 microseconds
+Crescente: 
+Tempo de execução do MinMax1: 2065 microseconds
+Decrescente: 
+Tempo de execução do MinMax1: 4070 microseconds
+Tempo de execução do MinMax2: 283 microseconds
+Crescente: 
+Tempo de execução do MinMax2: 1986 microseconds
+Decrescente: 
+Tempo de execução do MinMax2: 3960 microseconds
+Tempo de execução do MinMax3: 4356 microseconds
+Crescente: 
+Tempo de execução do MinMax3: 6072 microseconds
+Decrescente: 
+Tempo de execução do MinMax3: 8024 microseconds
+----------------------------------------------------------------------100000
+Tempo de execução do MinMax1: 2922 microseconds
+Crescente: 
+Tempo de execução do MinMax1: 21353 microseconds
+Decrescente: 
+Tempo de execução do MinMax1: 42721 microseconds
+Tempo de execução do MinMax2: 2791 microseconds
+Crescente: 
+Tempo de execução do MinMax2: 20958 microseconds
+Decrescente: 
+Tempo de execução do MinMax2: 42268 microseconds
+Tempo de execução do MinMax3: 46198 microseconds
+Crescente: 
+Tempo de execução do MinMax3: 64200 microseconds
+Decrescente: 
+Tempo de execução do MinMax3: 86336 microseconds
+----------------------------------------------------------------------500000
+Tempo de execução do MinMax1: 15039 microseconds
+Crescente: 
+Tempo de execução do MinMax1: 112302 microseconds
+Decrescente: 
+Tempo de execução do MinMax1: 228777 microseconds
+Tempo de execução do MinMax2: 15073 microseconds
+Crescente: 
+Tempo de execução do MinMax2: 112423 microseconds
+Decrescente: 
+Tempo de execução do MinMax2: 228961 microseconds
+Tempo de execução do MinMax3: 250510 microseconds
+Crescente: 
+Tempo de execução do MinMax3: 347101 microseconds
+Decrescente: 
+Tempo de execução do MinMax3: 463736 microseconds
