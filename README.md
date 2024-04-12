@@ -38,8 +38,16 @@ Através desta análise, esperamos identificar qual implementação do algoritmo
 
 ## Arquivos
 
-### Dataset
+### Datasets
 - `tempos_execucao.txt`: Arquivo de saída contendo os tempos de execução de cada implementação do algoritmo MinMax para cada método de ordenação utilizado.
+- `dados.txt`: Arquivo de saída formatado para uso no gnuplot.
+- `grafico.gp`: Arquivo de plotagem em gráficos das informações contidas em "dados.txt".
+#### datasets/pics
+- `minmax.png`: Gráficos de comparação de todos os casos.
+- `minmax1.png`: Gráficos de comparação dos casos usando minmax 1.
+- `minmax2.png`: Gráficos de comparação dos casos usando minmax 2.
+- `minmax3.png`: Gráficos de comparação dos casos usando minmax 3.
+- `minmax12.png`: Gráficos de comparação dos casos usando minmax 1 e 2.
 
 ### Código-fonte
 - `main.cpp`: Programa principal responsável pela análise de desempenho.
@@ -59,6 +67,33 @@ Através desta análise, esperamos identificar qual implementação do algoritmo
 O programa `main.cpp` é responsável por conduzir a análise de desempenho das implementações do algoritmo MinMax. Abaixo está uma explicação detalhada de cada função presente no código:
 
 ### `main()`
+
+- Executa operações no vetor e mede o tempo de execução.
+- Importa arquivos e bibliotecas.
+- Não possui parâmetros.
+
+<ul>
+    <li><code>Vetor::run()</code>: Esta função importa os arquivos necessários e bibliotecas depois chama a função "run" que executa as demais funções. Veja o exemplo abaixo:
+        <pre><code>
+#include &lt;iostream&gt;
+#include &lt;chrono&gt; // para medir o tempo de execução
+#include "vetor.hpp"
+#include "minmax.hpp"
+#include &lt;fstream&gt; // Para lidar com arquivos de texto
+
+using namespace std;
+using namespace std::chrono;
+
+int main() {
+    Vetor vetor;
+    vetor.run();
+    return 0;
+}
+        </code></pre>
+    </li>
+</ul>
+
+### `run()`
 - Esta é a função principal do programa, onde ocorre o controle do fluxo de execução.
 - Primeiramente, é aberto o arquivo `tempos_execucao.txt` para registrar os tempos de execução das implementações do algoritmo MinMax.
 - Em seguida, um loop é executado para cada tamanho de vetor a ser analisado, variando de 1000 a 500000 em potências de 10.
@@ -69,7 +104,7 @@ O programa `main.cpp` é responsável por conduzir a análise de desempenho das 
 <ul>
     <li><code>main()</code>: Função principal responsável pelo controle do fluxo de execução do programa. Realiza a análise de desempenho das implementações do algoritmo MinMax e registra os resultados no arquivo de saída. Por exemplo:
         <pre><code>
-int main() {
+void Vetor::run() {
     // Abre o arquivo para registrar os tempos de execução
     ofstream outputFile("tempos_execucao.txt", ofstream::out | ofstream::trunc);
     // Instancia um objeto da classe Vetor
@@ -87,7 +122,17 @@ int main() {
                 // Preenche o vetor com números aleatórios
                 vetor.preencherAleatorio(tamanhoVetor);
                 // Ordena o vetor (opcionalmente) em ordem crescente ou decrescente
-                // Chama uma das implementações do MinMax e mede o tempo de execução
+                if (j == 1) {
+                    ordenarCrescente();
+                    cout << "Crescente" << endl;
+                }
+                else if (j == 2) {
+                    ordenarDecrescente();
+                    cout << "Decrescente" << endl;
+                }
+                // Chama uma das implementações do MinMax
+                int Max, Min;
+                minmax1(getVetor(), Max, Min);
                 // Registra os resultados no console e no arquivo de saída
             }
             // Registra o tempo de execução médio no arquivo de saída
