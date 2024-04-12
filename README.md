@@ -385,6 +385,30 @@ Os resultados dos testes realizados são registrados no arquivo `tempos_execucao
 - Tempo de execução do MinMax3 (Ordenado Crescente): 339333 microseconds
 - Tempo de execução do MinMax3 (Ordenado Decrescente): 452386 microseconds
 
+## Utilizando o Gnuplot para Visualização de Dados
+
+O Gnuplot foi a ferramenta usada para criar gráficos de alta qualidade de forma programática. Abaixo, explicamos o funcionamento do código Gnuplot fornecido:
+
+1. **Configurações Iniciais**:
+   - As primeiras linhas do código definem as configurações globais do gráfico, como tamanho da fonte, tamanho da imagem de saída e cor de fundo.
+   - O comando `set output 'pics/minmaxx.png'` especifica o nome do arquivo de saída e o formato da imagem (neste caso, PNG).
+
+2. **Personalização do Gráfico**:
+   - É definida uma cor de fundo para o gráfico usando o comando `set object 1 rectangle from screen 0,0 to screen 1,1 behind fillcolor rgb "#0d1117" fillstyle solid 1`.
+   - O título do gráfico, rótulos dos eixos, legendas e estilos de linha são configurados para garantir uma boa legibilidade e estética.
+
+3. **Estilos de Linha**:
+   - São definidos nove estilos de linha diferentes (`set style line`) com cores e formas específicas para representar cada conjunto de dados.
+
+4. **Plotagem dos Dados**:
+   - A função `plot` é usada para traçar os dados do arquivo 'dados.txt' em um gráfico. Cada conjunto de dados é representado por uma linha, e a cor e estilo são definidos pelos estilos de linha configurados anteriormente.
+   - Os dados são especificados usando o comando `using`, onde os números após os dois pontos representam as colunas do arquivo de dados que serão usadas para o eixo x e para cada conjunto de dados.
+
+5. **Interpretação dos Resultados**:
+   - O gráfico resultante mostrará o tempo de execução em microssegundos em relação ao tamanho do conjunto de dados para diferentes algoritmos de busca de mínimo e máximo (MinMax1, MinMax2 e MinMax3), bem como suas variantes (crescente e decrescente).
+   - Cada linha representa o tempo de execução de um algoritmo para diferentes tamanhos de conjuntos de dados.
+
+Utilize este código como base para visualizar e analisar seus próprios conjuntos de dados usando o Gnuplot.
 
 ## Conclusão
 
